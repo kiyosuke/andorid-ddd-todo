@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">DDD サンプル</string>
+
+    <string name="title">タイトル</string>
+    <string name="content">内容</string>
+    <string name="input_title">タイトルを入力してください</string>
+    <string name="input_content">内容を入力してください（任意）</string>
+    <string name="save">保存</string>
+    <string name="require_title_message">タイトルは必須項目です</string>
+    <string name="not_found_todo_message">対象のTODOが見つかりませんでした</string>
+</resources>

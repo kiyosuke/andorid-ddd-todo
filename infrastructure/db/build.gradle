@@ -1,0 +1,12 @@
+import dependencies.Deps
+
+apply plugin: 'com.android.library'
+
+apply from: rootProject.file('gradle/android.gradle')
+
+dependencies {
+    implementation project(':domain:model')
+    implementation Deps.AndroidX.Room.runtime
+    implementation Deps.AndroidX.Room.ktx
+    kapt Deps.AndroidX.Room.compiler
+}

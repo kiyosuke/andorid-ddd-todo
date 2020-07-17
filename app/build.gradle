@@ -1,0 +1,58 @@
+import dependencies.Deps
+
+apply plugin: 'com.android.application'
+
+apply from: rootProject.file('gradle/android.gradle')
+
+apply plugin: "androidx.navigation.safeargs.kotlin"
+
+android {
+
+    defaultConfig {
+        applicationId "com.kiyosuke.dddsample"
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    buildFeatures {
+        dataBinding = true
+    }
+}
+
+dependencies {
+    implementation project(':domain:model')
+    implementation project(':domain:service')
+    implementation project(':application')
+    implementation project(':infrastructure:db')
+    implementation project(':infrastructure:repository')
+
+    implementation Deps.Kotlin.stdlib
+    implementation Deps.Kotlin.coroutineCore
+    implementation Deps.Kotlin.coroutineAndroid
+
+    implementation Deps.AndroidX.coreKtx
+    implementation Deps.AndroidX.appCompat
+    implementation Deps.AndroidX.constraint
+    implementation Deps.AndroidX.recyclerView
+
+    implementation Deps.AndroidX.lifecycleLiveData
+    implementation Deps.AndroidX.liveDataCoreKtx
+    implementation Deps.AndroidX.liveDataKtx
+    implementation Deps.AndroidX.lifecycleKtx
+
+    implementation Deps.AndroidX.material
+
+    implementation Deps.AndroidX.Navigation.fragmentKtx
+    implementation Deps.AndroidX.Navigation.uiKtx
+
+    implementation Deps.Dagger.android
+    implementation Deps.Dagger.androidSupport
+    kapt Deps.Dagger.androidCompiler
+}

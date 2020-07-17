@@ -1,0 +1,11 @@
+import dependencies.Deps
+
+apply plugin: 'com.android.library'
+
+apply from: rootProject.file('gradle/android.gradle')
+
+dependencies {
+    implementation project(':domain:model')
+    implementation project(':infrastructure:db')
+    implementation Deps.Kotlin.coroutineCore
+}

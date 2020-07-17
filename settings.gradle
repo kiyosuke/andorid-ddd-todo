@@ -1,0 +1,8 @@
+include ':application'
+include ':domain:service'
+include ':infrastructure:repository'
+include ':domain:model'
+include ':infrastructure:db'
+include ':domain'
+include ':app'
+rootProject.name = "DDD Sample"
